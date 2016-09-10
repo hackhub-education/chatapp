@@ -4,7 +4,7 @@
 var socket = io('http://localhost:3000');
 
 $('form').submit(function(){
-    socket.emit('chat message', $('#m').val());
+    socket.emit('chat message', username + ': ' + $('#m').val());
     $('#m').val('');
     return false;
 });

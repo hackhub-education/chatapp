@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  if (!user)
+    a.btn.btn-primary(href="/login") Login
+    a.btn.btn-info(href="/register") Register
+  if (user)
+    p You are currently logged in as #{user.username}
+    a.btn.btn-primary(href="/chat") Enter Chat Room
+    a.btn.btn-default(href="/logout") Logout
